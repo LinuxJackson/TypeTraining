@@ -1,0 +1,32 @@
+﻿<Window x:Class="TypingTrining.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TypingTrining"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="366" Width="525" ResizeMode="NoResize" Loaded="Window_Loaded">
+    <Grid x:Name="StartingGrid">
+        <Label x:Name="lblFIlePath" Content="文件路径：" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtFilePath" HorizontalAlignment="Left" Height="23" Margin="80,12,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="238"/>
+        <Button x:Name="btnSelectFile" Background="White" Content="Select" HorizontalAlignment="Left" Margin="377,13,0,0" VerticalAlignment="Top" Width="47" Click="btnSelectFile_Click"/>
+        <Label x:Name="lblState" Content="就绪" Foreground="Green" HorizontalAlignment="Left" Margin="429,10,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtTextPreview" TextChanged="txtTextPreview_TextChanged" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" IsEnabled="False" HorizontalAlignment="Left" Height="209" Margin="10,57,0,0" VerticalAlignment="Top" Width="451" AcceptsReturn="True"/>
+        <Label Content="将使用修改后的文档作为训练目标" x:Name="lblWordChangedWarning" Foreground="Red" FontSize="9" HorizontalAlignment="Left" Margin="298,57,0,0" VerticalAlignment="Top"/>
+        <Grid x:Name="gdStart" HorizontalAlignment="Left" Height="47" Margin="10,281,0,0" VerticalAlignment="Top" Width="451">
+            <Button x:Name="btnStart" Content="开始" HorizontalAlignment="Left" Margin="376,28,0,0" VerticalAlignment="Top" Width="75" IsEnabled="True" Click="btnStart_Click"/>
+            <RadioButton x:Name="rbtModle_Line" Content="行模式" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <RadioButton x:Name="rbtModle_Passage" Content="文章模式" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,20,0,0"/>
+            <Label Content="更多选项请点击展开按钮" Foreground="Gray" x:Name="lblWordChangedWarning_Copy" FontSize="9" HorizontalAlignment="Left" Margin="342,2,0,0" VerticalAlignment="Top"/>
+        </Grid>
+        <Label x:Name="lblChoose" Content="选用" Foreground="Gray" Opacity="0.5" MouseEnter="lblChoose_MouseEnter" MouseLeave="lblChoose_MouseLeave" MouseDown="lblChoose_MouseDown" FontWeight="Bold" FontSize="25" HorizontalAlignment="Left" Margin="377,206,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnMore" Click="btnMore_Click" Background="AliceBlue" HorizontalAlignment="Left" Margin="479,44,-1,0" VerticalAlignment="Top" Width="42"/>
+        <Border Background="White" BorderBrush="Black" x:Name="bdrMore" BorderThickness="1" HorizontalAlignment="Left" Height="274" Margin="521,44,0,0" VerticalAlignment="Top" Width="100">
+            <Grid x:Name="gdMore" Margin="1,1,-1,-1">
+                <Label x:Name="lblRecords" Content="查看记录" MouseEnter="lblRecords_MouseEnter" MouseLeave="lblRecords_MouseLeave" MouseDown="lblRecords_MouseDown" Foreground="Gray" HorizontalAlignment="Left" Margin="40,0,0,0" VerticalAlignment="Top"/>
+            </Grid>
+        </Border>
+        <Button Content="浏览" Background="White" HorizontalAlignment="Left" Margin="325,13,0,0" VerticalAlignment="Top" Width="47" Click="BtnShowFileDialog_Click"/>
+
+    </Grid>
+</Window>
